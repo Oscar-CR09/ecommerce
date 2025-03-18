@@ -18,5 +18,5 @@ class Category(models.Model):
     
     
     def __str__(self):
-        #return self.category_name
-        return str(self.category_name)
+        return self.category_name
+        #return str(self.category_name)
