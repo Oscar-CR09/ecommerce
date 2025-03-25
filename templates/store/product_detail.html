@@ -42,10 +42,10 @@
               <div class="row">
                 <div class="item-option-select">
                   <h6>Seleccion de Color</h6>
-
-                  <select class="form-control" name="color" id="color">
-                    {% for i in single_product.variation_set.all %}
-                      <option value="{{ i.variation.value }}"> {{ i.variation_value }} </option>
+                  <select class="form-control" name="color" id="" required>
+                    <option value="" disabled selected>Seleccione</option>
+                    {% for i in single_product.variation_set.colors %}
+                    <option value="{{ i.variation.value | lower }}"> {{ i.variation_value | capfirst }} </option>
                     {% endfor %}
 
                   </select>
@@ -57,15 +57,14 @@
               <div class="row">
 
                 <div class="item-option-select">
-                  <h6>Seleccion de Talla</h6>
-                  <select class="form-control" name="talla" id="">
-
-                    <option value="small"> Small </option>
-                    <option value="medium"> Medium </option>
-                    <option value="large"> Large </option>
-
+                  <h6>Seleccion de Talla</h6>                  
+                  <select class="form-control" name="talla" id="" required>
+                    <option value="" disabled selected>Seleccione</option>
+                    {% for i in single_product.variation_set.tallas %}
+                    <option value="{{ i.variation.value | lower}}"> {{ i.variation_value | capfirst }} </option>
+                    {% endfor %}
+                    
                   </select>
-
                 </div>
               </div> <!-- row.// -->
               <hr>
