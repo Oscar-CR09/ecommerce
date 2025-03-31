@@ -52,68 +52,54 @@ $(document).ready(function() {
 <!-- ============================ COMPONENT REGISTER   ================================= -->
 	<div class="card mx-auto" style="max-width:520px; margin-top:40px;">
       <article class="card-body">
-		<header class="mb-4"><h4 class="card-title">Sign up</h4></header>
-		<form>
+		<header class="mb-4"><h4 class="card-title">Registro de Usuario</h4></header>
+		<form action="{% url 'register' %}" method="post" >
+			{% csrf_token %} <!-- CSRF token for security -->
+
+				 <!-- {{ form.as_p }} Django form rendering -->
+				
 				<div class="form-row">
 					<div class="col form-group">
-						<label>First name</label>
-					  	<input type="text" class="form-control" placeholder="">
+						<label>Nombre</label>
+						 {{ form.first_name }}
+
 					</div> <!-- form-group end.// -->
 					<div class="col form-group">
-						<label>Last name</label>
-					  	<input type="text" class="form-control" placeholder="">
+						<label>Apellido</label>
+					  	{{ form.last_name }}
 					</div> <!-- form-group end.// -->
 				</div> <!-- form-row end.// -->
-				<div class="form-group">
-					<label>Email</label>
-					<input type="email" class="form-control" placeholder="">
-					<small class="form-text text-muted">We'll never share your email with anyone else.</small>
-				</div> <!-- form-group end.// -->
-				<div class="form-group">
-					<label class="custom-control custom-radio custom-control-inline">
-					  <input class="custom-control-input" checked="" type="radio" name="gender" value="option1">
-					  <span class="custom-control-label"> Male </span>
-					</label>
-					<label class="custom-control custom-radio custom-control-inline">
-					  <input class="custom-control-input" type="radio" name="gender" value="option2">
-					  <span class="custom-control-label"> Female </span>
-					</label>
-				</div> <!-- form-group end.// -->
+		
+				<div class="form-row">
+					<div class="col form-group">
+						<label>Número Telefonico</label>
+						 {{ form.phone_number }}
+
+					</div> <!-- form-group end.// -->
+					<div class="col form-group">
+						<label>Email</label>
+					  	{{ form.email }}
+					</div> <!-- form-group end.// -->
+				</div> <!-- form-row end.// -->
+		
 				<div class="form-row">
 					<div class="form-group col-md-6">
-					  <label>City</label>
-					  <input type="text" class="form-control">
-					</div> <!-- form-group end.// -->
-					<div class="form-group col-md-6">
-					  <label>Country</label>
-					  <select id="inputState" class="form-control">
-					    <option> Choose...</option>
-					      <option>Uzbekistan</option>
-					      <option>Russia</option>
-					      <option selected="">United States</option>
-					      <option>India</option>
-					      <option>Afganistan</option>
-					  </select>
-					</div> <!-- form-group end.// -->
-				</div> <!-- form-row.// -->
-				<div class="form-row">
-					<div class="form-group col-md-6">
-						<label>Create password</label>
+						<label>Crear password</label>
 					    <input class="form-control" type="password">
 					</div> <!-- form-group end.// --> 
 					<div class="form-group col-md-6">
-						<label>Repeat password</label>
+						<label>Repetir password</label>
 					    <input class="form-control" type="password">
 					</div> <!-- form-group end.// -->  
 				</div>
 			    <div class="form-group">
-			        <button type="submit" class="btn btn-primary btn-block"> Register  </button>
+			        <button type="submit" class="btn btn-primary btn-block"> Registrar  </button>
 			    </div> <!-- form-group// -->      
 			        
 			</form>
 		</article><!-- card-body.// -->
     </div> <!-- card .// -->
-    <p class="text-center mt-4">Have an account? <a href="">Log In</a></p>
+    <p class="text-center mt-4">Tiene una cuenta <a href="">Ingresar con su Cuenta</a></p>
     <br><br>
 <!-- ============================ COMPONENT REGISTER  END.// ================================= -->
 
@@ -121,15 +107,15 @@ $(document).ready(function() {
 </section>
 <!-- ========================= SECTION CONTENT END// ========================= -->
 
-
+<!--  -->
 <!-- ========================= FOOTER ========================= -->
 <footer class="section-footer border-top padding-y">
 	<div class="container">
 		<p class="float-md-right"> 
-			&copy Copyright 2019 All rights reserved
+			&copy Copyright 2025 All rights reserved
 		</p>
 		<p>
-			<a href="#">Terms and conditions</a>
+			<a href="#">Terminos y condiciones </a>
 		</p>
 	</div><!-- //container -->
 </footer>
